@@ -15,7 +15,10 @@ namespace MyProject.Tests
         [InlineData(19.0, BmiClassification.Normal)]
         [InlineData(21.0, BmiClassification.Normal)]
         [InlineData(24.0, BmiClassification.Normal)]
-        public void DeterminateDmi_ForBmiBelow18_ReturnsUnderweightCalssification(double bmi, BmiClassification classification) 
+        [InlineData(28.0, BmiClassification.Overweight)]
+        [InlineData(32.0, BmiClassification.Obesity)]
+        [InlineData(54.0, BmiClassification.ExtremeObesity)]
+        public void DeterminateDmi_ForGivenBmi_ReturnsCorrectCalssification(double bmi, BmiClassification classification) 
         {
             //arrange
             
