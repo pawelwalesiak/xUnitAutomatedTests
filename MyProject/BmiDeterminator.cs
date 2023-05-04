@@ -16,5 +16,6 @@ namespace MyProject
             <= 34.9 => BmiClassification.Obesity,
             _ => BmiClassification.ExtremeObesity
         };
+
     }
 }

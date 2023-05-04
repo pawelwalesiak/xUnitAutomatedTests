@@ -1,31 +1,30 @@
-using System;
-using System.Net.Http;
 using System.Text;
-using Xunit;
 
 namespace MyProject.Tests
 {
     public class StringBuilderTests
+
     {
         [Fact]
-        public void Append_ForTwoStrings_ReturnsConcatenatedString()
+        public void Append_ForTwoStrings_ReturnsConcatnenatedString()
         {
-            // arrange
+            //arrange
 
             StringBuilder sb = new StringBuilder();
+           
+            //act
 
-            // act
             sb.Append("test")
-                .Append("test2");
+                .Append("test20");
 
             string result = sb.ToString();
+             
 
+            //assert
 
-            // assert
-
-            Assert.Equal("testtest2", result);
+            Assert.Equal("testtest20", result);
+           
 
         }
-
     }
 }
