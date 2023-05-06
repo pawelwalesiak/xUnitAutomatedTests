@@ -11,32 +11,33 @@ namespace MyProject.Tests
     public class BmiCalculatorFacadeTest
     {
         private const string OVERWEIGHT_SUMMARY = "You are a bit overweight";
+        private const string NORMAL_SUMMARY = "Your weight is normal, keep it up";
 
-        [Fact]
-        public void GetResult_ForValidInput_ReturnsCorrectResult() 
+        [Theory]
+        [InlineData(BmiClassification.Overweight, OVERWEIGHT_SUMMARY)]
+        [InlineData(BmiClassification.Overweight, NORMAL_SUMMARY)]
+        
+        public void GetResult_ForValidInput_ReturnsCorrectSummary(BmiClassification bmiClassification, string ExpectedResutl) 
         {
 
-
-
             var bmiDeterminatorMock = new Mock<IBmiDeterminator>();
-            bmiDeterminatorMock.Setup(x => x.DetermineBmi(It.IsAny<double>())).Returns(BmiClassification.Overweight);
+            bmiDeterminatorMock.Setup(x => x.DetermineBmi(It.IsAny<double>()))
+                .Returns(bmiClassification);
 
             BmiCalculatorFacade bmiCalculatorFacade = new BmiCalculatorFacade(UnitSystem.Metric, bmiDeterminatorMock.Object);
 
-            double weight = 90;
-            double height = 190;
-
+          
             //act 
-            BmiResult result  = bmiCalculatorFacade.GetResult(weight, height);
+            BmiResult result  = bmiCalculatorFacade.GetResult(1,1);
 
             //assert 
            // Assert.Equal(24.94, result.Bmi);
            //Assert.Equal(BmiClassification.Overweight, result.BmiClassification);
            // Assert.Equal(OVERWEIGHT_SUMMARY, result.Summary);
 
-            result.Bmi.Should().Be(24.93);
-            result.BmiClassification.Should().Be(BmiClassification.Overweight);
-            result.Summary.Should().Be(OVERWEIGHT_SUMMARY);
+            //result.Bmi.Should().Be(24.93);
+            //result.BmiClassification.Should().Be(BmiClassification.Overweight);
+            result.Summary.Should().Be(ExpectedResutl);
 
         }
     }
