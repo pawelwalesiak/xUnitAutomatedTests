@@ -30,7 +30,7 @@ namespace Exercise.Solution.Tests
             {
                 new DateRange(new DateTime(2020, 1, 12), new DateTime(2020, 1, 14)),
             },
-        };
+        }; 
 
         private static IEnumerable<object[]> GetRangeList()
         {

@@ -14,6 +14,10 @@ namespace Exercise.Solution.Tests
         [Theory]
         [InlineData("ala  ma kota", "kota ma  ala")]
         [InlineData("To jest zdanie testowe", "testowe zdanie jest To")]
+        [InlineData("ala ma kota", "kota ma ala")]
+        [InlineData("to jest test", "test jest to")]
+        [InlineData("123 456 789", "789 456 123")]
+        [InlineData("", "")]
         [InlineData("This test checks reversing words", "words reversing checks test This")]
         public void ReverseWords_ForGivenSentance_ReturnsReversedSentence(string sentence, string expectedResult)
         {
@@ -47,6 +51,7 @@ namespace Exercise.Solution.Tests
         [InlineData("alA")]
         [InlineData("Kuba")]
         [InlineData("test")]
+    
         public void IsPalindrome_ForANonPalindromWord_ReturnsFalseValue(string word)
         {
             // act
