@@ -11,7 +11,9 @@ namespace Exercise
         public static List<int> FilterOddNumber(List<int> listOfNumbers)
         {
 
-
+            //1,2,3 -> 1,3
+            //1,1,2,3,3 -> 1,1,3,3
+            //8,10,2 -> empty
             for (int i = 0; i < listOfNumbers.Count; i++)
             {
                 if (listOfNumbers[i] % 2 == 0)
