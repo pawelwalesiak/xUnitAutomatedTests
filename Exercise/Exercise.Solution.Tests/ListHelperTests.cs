@@ -12,6 +12,18 @@ namespace Exercise.Solution.Tests
     {
         [Fact]
        
-        
+        public void FilterOddNumber_ReturnEvenList_ReturnEvenNumbers() 
+        {
+            //act 
+
+            //arrange
+
+            List<int> input = new List<int>() { 1,2,3};  
+            List<int> expected = new List<int>() {1,3 };
+            //assert
+           List<int> result =  ListHelper.FilterOddNumber(input);
+          // Assert.Equal(expected, result);
+            result.Should().Equal(expected);
+        }
     }
 }
