@@ -18,8 +18,8 @@ namespace Exercise.Solution.Tests
 
             //arrange
 
-            List<int> input = new List<int>() { 1,2,3};  
-            List<int> expected = new List<int>() {1,3 };
+            List<int> input = new List<int>() { 1,2,2,3,5,7,9,8,2};  
+            List<int> expected = new List<int>() {1,3,5,7,9 };
             //assert
            List<int> result =  ListHelper.FilterOddNumber(input);
           // Assert.Equal(expected, result);
