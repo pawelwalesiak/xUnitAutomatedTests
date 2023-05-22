@@ -51,12 +51,12 @@ namespace Exercise.Solution.Tests
         }
 
         [Theory]
-        [MemberData(nameof(GetRangeList))]
-
-      //  [InlineData(0)]
-//      [InlineData(1)]
-    //    [InlineData(2)]
-      //  [InlineData(3)]
+        //   [MemberData(nameof(GetRangeList))]
+        [ClassData (typeof(ValidatorTestsData))]
+        //[InlineData(0)]
+        //[InlineData(1)]
+        //[InlineData(2)]
+        //[InlineData(3)]
         public void ValidatorOverlapping_ForOverlappingDateranges(List<DateRange> ranges)
         {
             //arragne 
