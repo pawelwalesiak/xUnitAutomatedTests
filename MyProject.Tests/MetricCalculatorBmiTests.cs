@@ -8,10 +8,21 @@ namespace MyProject.Tests
 {
     public class MetricCalculatorBmiTests
     {
+        public static IEnumerable<object[]> GetSampleData()
+        {
+            yield return new object[] { 100, 170, 34.6 };
+            yield return new object[] { 57, 170, 19.72 };
+            yield return new object[] { 70, 170, 24.22 };
+           // yield return new object[] { 70, 170 }; -> nie dostanę błedu kompilaji sam muszę sprawdzać ile parametrów podaje
+
+
+        }
+
         [Theory]
-        [InlineData(100, 170, 34.6)]
-        [InlineData(57, 170, 19.72)]
-        [InlineData(70, 170, 24.22)]
+        //  [InlineData(100, 170, 34.6)]
+        //  [InlineData(57, 170, 19.72)]
+        //  [InlineData(70, 170, 24.22)]
+        [MemberData(nameof (GetSampleData))]
         public void CalculateBmi_ForgivenWightAndHeidht_ReturnsCorrectBmi(double weight, double height, double bmiResult)
         { 
             //arragne

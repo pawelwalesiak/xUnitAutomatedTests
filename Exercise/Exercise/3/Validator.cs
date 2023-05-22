@@ -8,10 +8,7 @@ namespace Exercise
 {
     public class Validator
     {
-        /// <summary>
-        /// Returns true value if the input date ranges are not overlapping
-        /// </summary>
-        /// <returns></returns>
+       
         public bool ValidateOverlapping(List<DateRange> dateRanges, DateRange input)
         {
             if (dateRanges == null || !dateRanges.Any()) return true;
