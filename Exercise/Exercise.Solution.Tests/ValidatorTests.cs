@@ -35,17 +35,33 @@ namespace Exercise.Solution.Tests
             },
         };
 
-        
+        public static IEnumerable<object[]> GetRangeList() 
+        {
+            yield return new object[] 
+            {
+                new List<DateRange>()
+                {
+                  new DateRange(new DateTime(2020, 1, 1), new DateTime(2020, 1, 15)),
+                  new DateRange(new DateTime(2020, 2, 1), new DateTime(2020, 2, 15)),
+                }
+
+            };
+
+           
+        }
+
         [Theory]
-        [InlineData(0)]
+        [MemberData(nameof(GetRangeList))]
+
+      //  [InlineData(0)]
 //      [InlineData(1)]
-        [InlineData(2)]
+    //    [InlineData(2)]
       //  [InlineData(3)]
-        public void ValidatorOverlapping_ForOverlappingDateranges(int index)
+        public void ValidatorOverlapping_ForOverlappingDateranges(List<DateRange> ranges)
         {
             //arragne 
 
-            List<DateRange> ranges = _rangeList[index]; 
+           
             DateRange input = new DateRange(new DateTime(2020, 1, 10), new DateTime(2020, 1, 10));
             Validator validator = new Validator();
 
