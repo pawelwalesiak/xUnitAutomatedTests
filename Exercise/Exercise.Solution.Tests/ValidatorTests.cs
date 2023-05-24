@@ -62,7 +62,7 @@ namespace Exercise.Solution.Tests
             //arragne 
 
            
-            DateRange input = new DateRange(new DateTime(2020, 1, 10), new DateTime(2020, 1, 10));
+            DateRange input = new DateRange(new DateTime(2020, 1, 10), new DateTime(2020, 1, 20));
             Validator validator = new Validator();
 
             //act 
