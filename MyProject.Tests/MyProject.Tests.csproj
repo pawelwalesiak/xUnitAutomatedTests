@@ -27,4 +27,10 @@
     <ProjectReference Include="..\MyProject\MyProject.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\MetricBmiCalculatorData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

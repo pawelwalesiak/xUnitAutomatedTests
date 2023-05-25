@@ -37,11 +37,13 @@ namespace MyProject.Tests
         }
 
         [Theory]
-        [InlineData(0,190)]
-        [InlineData(-50,150)]
-        [InlineData(-11,150)]
-        [InlineData(90,0)]
-        [InlineData(0, 0)]
+     //   [InlineData(0,190)]
+       // [InlineData(-50,150)]
+       // [InlineData(-11,150)]
+        //[InlineData(90,0)]
+       // [InlineData(0, 0)]
+
+        [ClassData(typeof(MetricCalculatorTestData))]
         public void CalculateBmi_ForInvalidArguments_ThrowsArgumentException(double weight, double height)
         {
 
