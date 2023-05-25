@@ -28,9 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\MetricBmiCalculatorData.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Compile Update="JsonFileData.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 
 </Project>
